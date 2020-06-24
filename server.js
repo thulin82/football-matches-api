@@ -1,10 +1,15 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const connectDB = require('./config/db');
+
+dotenv.config({ path: './config/config.env'});
+
+connectDB();
 
 const matches = require('./routes/matches');
 
-dotenv.config({ path: './config/config.env'});
+
 
 const app = express();
 
