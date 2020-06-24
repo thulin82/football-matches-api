@@ -9,15 +9,8 @@ const {
 
 const router = express.Router();
 
-router
-    .route('/')
-    .get(getMatches)
-    .post(createMatch);
+router.route('/').get(getMatches).post(createMatch);
 
-router
-    .route('/:id')
-    .get(getMatch)
-    .put(updateMatch)
-    .delete(deleteMatch);
+router.route('/:id').get(getMatch).put(updateMatch).delete(deleteMatch);
 
 module.exports = router;
