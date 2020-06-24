@@ -1,35 +1,23 @@
 const express = require('express');
+const {
+    getMatch,
+    getMatches,
+    createMatch,
+    updateMatch,
+    deleteMatch
+} = require('../controllers/matches');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, msg: 'Show all matches'})
-});
+router
+    .route('/')
+    .get(getMatches)
+    .post(createMatch);
 
-router.post('/', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, msg: 'Create new match'})
-});
-
-router.get('/:id', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, msg: `Show match ${req.params.id}`})
-});
-
-router.put('/:id', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, msg: `Update match ${req.params.id}`})
-});
-
-router.delete('/:id', (req, res) => {
-    res
-        .status(200)
-        .json({ success: true, msg: `Delete match ${req.params.id}`})
-});
+router
+    .route('/:id')
+    .get(getMatch)
+    .put(updateMatch)
+    .delete(deleteMatch);
 
 module.exports = router;
