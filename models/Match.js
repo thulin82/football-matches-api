@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const MatchSchema = new mongoose.Schema({
     name: {
@@ -52,6 +53,12 @@ const MatchSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+});
+
+//Schema Middleware
+MatchSchema.pre('save', function (next) {
+    this.slug = slugify(this.name, { lower: true });
+    next();
 });
 
 module.exports = mongoose.model('Match', MatchSchema);
