@@ -1,29 +1,29 @@
 {
-  "name": "football-matches-api",
-  "version": "1.0.0",
-  "description": "API backend for football matches",
-  "main": "server.js",
-  "scripts": {
-    "start": "NODE_ENV=production node server",
-    "dev": "nodemon server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:thulin82/football-matches-api.git"
-  },
-  "author": "Markus Thulin",
-  "license": "MIT",
-  "dependencies": {
-    "colors": "^1.4.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.20",
-    "morgan": "^1.10.0",
-    "node-geocoder": "^3.27.0",
-    "slugify": "^1.4.2"
-  },
-  "devDependencies": {
-    "eslint": "^7.3.1",
-    "nodemon": "^2.0.4"
-  }
+    "name": "football-matches-api",
+    "version": "1.0.0",
+    "description": "API backend for football matches",
+    "main": "server.js",
+    "scripts": {
+        "start": "NODE_ENV=production node server",
+        "dev": "nodemon server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:thulin82/football-matches-api.git"
+    },
+    "author": "Markus Thulin",
+    "license": "MIT",
+    "dependencies": {
+        "colors": "^1.4.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.0",
+        "mongoose": "^5.9.0",
+        "morgan": "^1.10.0",
+        "node-geocoder": "^3.27.0",
+        "slugify": "^1.4.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.5.0",
+        "nodemon": "^2.0.4"
+    }
 }
