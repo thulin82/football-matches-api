@@ -14,5 +14,10 @@ $ npm install
 ```
 $ npm start
 ```
+### Environment variables
+In config/config.env add
+```
+MONGODB_URI = 
+```
 
 © Markus Thulin 2019-
