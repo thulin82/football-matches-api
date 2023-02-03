@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 // eslint-disable-next-line no-unused-vars
 const colors = require('colors');
+const cors = require('cors');
 const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 
@@ -14,6 +15,7 @@ const matches = require('./routes/matches');
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'development') {
@@ -28,5 +30,7 @@ const PORT = process.env.PORT || 6000;
 
 app.listen(
     PORT,
-    console.log(`Server started in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold)
+    //console.log(`Server started in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold)
 );
+
+module.exports = app;

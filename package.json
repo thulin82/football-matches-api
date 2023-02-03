@@ -5,7 +5,9 @@
     "main": "server.js",
     "scripts": {
         "start": "NODE_ENV=production node server",
-        "dev": "nodemon server"
+        "dev": "nodemon server",
+        "test": "mocha --reporter json > test-results.json --exit --recursive --timeout 10000 tests",
+        "test_console": "mocha --exit --recursive --timeout 10000 tests"
     },
     "repository": {
         "type": "git",
@@ -14,9 +16,13 @@
     "author": "Markus Thulin",
     "license": "MIT",
     "dependencies": {
+        "chai": "^4.3.0",
+        "chai-http": "^4.3.0",
         "colors": "^1.4.0",
+        "cors": "^2.8.0",
         "dotenv": "^16.0.0",
         "express": "^4.18.0",
+        "mocha": "^10.2.0",
         "mongoose": "^5.13.0",
         "morgan": "^1.10.0",
         "node-geocoder": "^4.2.0",

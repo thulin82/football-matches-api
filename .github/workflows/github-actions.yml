@@ -1,0 +1,33 @@
+name: GitHub Actions
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [16.x, 18.x, 19.x]
+
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: npm install
+            - run: npm test
+              env:
+                  NODE_ENV: ${{secrets.NODE_ENV}}
+                  MONGODB_URI: ${{secrets.MONGODB_URI}}
+            - name: Test Report
+              uses: dorny/test-reporter@v1
+              with:
+                  name: unit tests (${{ matrix.node-version }})
+                  path: test-results.json
+                  reporter: mocha-json
