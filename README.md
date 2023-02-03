@@ -1,5 +1,7 @@
 # [Football Matches API](https://github.com/thulin82/football-matches-api)
 
+[![GitHub Actions](https://github.com/thulin82/football-matches-api/actions/workflows/github-actions.yml/badge.svg)](https://github.com/thulin82/football-matches-api/actions/workflows/github-actions.yml)
+
 API backend for football matches (no frontend at this point)
 
 ## Setup
