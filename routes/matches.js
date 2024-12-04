@@ -1,16 +1,16 @@
-const express = require('express');
-const {
+import express from "express";
+import {
     getMatch,
     getMatches,
     createMatch,
     updateMatch,
-    deleteMatch
-} = require('../controllers/matches');
+    deleteMatch,
+} from "../controllers/matches.js";
 
 const router = express.Router();
 
-router.route('/').get(getMatches).post(createMatch);
+router.route("/").get(getMatches).post(createMatch);
 
-router.route('/:id').get(getMatch).put(updateMatch).delete(deleteMatch);
+router.route("/:id").get(getMatch).put(updateMatch).delete(deleteMatch);
 
-module.exports = router;
+export default router;
