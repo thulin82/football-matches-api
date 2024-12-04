@@ -17,8 +17,8 @@
     "author": "Markus Thulin",
     "license": "MIT",
     "dependencies": {
-        "chai": "^4.4.0",
-        "chai-http": "^4.4.0",
+        "chai": "^5.1.0",
+        "chai-http": "^5.1.0",
         "cors": "^2.8.0",
         "dotenv": "^16.4.0",
         "express": "^4.21.0",
