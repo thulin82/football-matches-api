@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const cors = require("cors");
 const errorHandler = require("./middleware/error");
-const connectDB = require("./config/db");
+const connectDB = require("./config/db").default;
 
 dotenv.config({ path: "./config/config.env" });
 
