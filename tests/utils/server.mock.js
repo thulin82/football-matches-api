@@ -1,6 +1,6 @@
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var server = require('../../server');
+import chai from "chai";
+import chaiHttp from "chai-http";
+import app from "../../server.js";
 
 chai.use(chaiHttp);
-module.exports = chai.request(server).keepOpen();
+export default chai.request(app).keepOpen();

@@ -1,15 +1,14 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const morgan = require("morgan");
-const cors = require("cors");
-const errorHandler = require("./middleware/error");
-const connectDB = require("./config/db");
+import express from "express";
+import dotenv from "dotenv";
+import morgan from "morgan";
+import cors from "cors";
+import errorHandler from "./middleware/error.js";
+import connectDB from "./config/db.js";
+import matches from "./routes/matches.js";
 
 dotenv.config({ path: "./config/config.env" });
 
 connectDB();
-
-const matches = require("./routes/matches");
 
 const app = express();
 
@@ -28,4 +27,4 @@ const PORT = process.env.PORT || 6000;
 
 app.listen(PORT);
 
-module.exports = app;
+export default app;
