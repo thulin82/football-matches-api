@@ -12,7 +12,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [18.x, 20.x, 22.x]
+                node-version: [22.x, 23.x]
 
         steps:
             - uses: actions/checkout@v4
@@ -21,6 +21,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - run: npm install
+            - run: npm run lint
             - run: npm test
               env:
                   NODE_ENV: ${{secrets.NODE_ENV}}
@@ -29,5 +30,5 @@ jobs:
               uses: dorny/test-reporter@v1
               with:
                   name: unit tests (${{ matrix.node-version }})
-                  path: test-results.json
-                  reporter: mocha-json
+                  path: reports/jest-junit.xml
+                  reporter: jest-junit

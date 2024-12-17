@@ -5,7 +5,7 @@ import Match from "../models/Match.js";
 // @desc    Get all matches
 // @route   GET /api/v1/matches
 // @access  Public
-export const getMatches = asyncHandler(async (req, res, next) => {
+export const getMatches = asyncHandler(async (req, res) => {
     const matches = await Match.find();
 
     res.status(200).json({
@@ -33,7 +33,7 @@ export const getMatch = asyncHandler(async (req, res, next) => {
 // @desc    Create new match
 // @route   POST /api/v1/matches
 // @access  Private
-export const createMatch = asyncHandler(async (req, res, next) => {
+export const createMatch = asyncHandler(async (req, res) => {
     const match = await Match.create(req.body);
 
     res.status(201).json({ success: true, data: match });
