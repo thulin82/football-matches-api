@@ -25,6 +25,6 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 6000;
 
-app.listen(PORT);
+const server = app.listen(PORT);
 
-export default app;
+export { app, server };

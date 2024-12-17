@@ -1,3 +1,6 @@
 node_modules
 config/config.env
 test-results.json
+junit.xml
+reports
+.early.coverage
