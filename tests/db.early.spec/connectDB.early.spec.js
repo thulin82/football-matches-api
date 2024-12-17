@@ -1,4 +1,4 @@
-// Unit tests for: connectDB
+/* eslint-disable no-undef */
 
 import mongoose from "mongoose";
 import connectDB from "../../config/db.js";
@@ -87,5 +87,3 @@ describe("connectDB() connectDB method", () => {
         });
     });
 });
-
-// End of unit tests for: connectDB

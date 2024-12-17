@@ -1,4 +1,4 @@
-// Unit tests for: asyncHandler
+/* eslint-disable no-undef */
 
 import asyncHandler from "../../middleware/async.js";
 
@@ -87,5 +87,3 @@ describe("asyncHandler() asyncHandler method", () => {
         });
     });
 });
-
-// End of unit tests for: asyncHandler

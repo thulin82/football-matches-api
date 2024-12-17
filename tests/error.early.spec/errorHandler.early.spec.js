@@ -1,6 +1,6 @@
-// Unit tests for: errorHandler
+/* eslint-disable no-undef */
 
-import errorHandler from "../../middleware/error";
+import errorHandler from "../../middleware/error.js";
 
 describe("errorHandler() errorHandler method", () => {
     let req, res, next;
@@ -95,5 +95,3 @@ describe("errorHandler() errorHandler method", () => {
         });
     });
 });
-
-// End of unit tests for: errorHandler

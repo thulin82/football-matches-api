@@ -8,11 +8,10 @@ import ErrorResponse from "../utils/errorResponse.js";
  * @param {Object} err - The error object.
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
- * @param {Function} next - The next middleware function.
  * @returns {void}
  * @throws {Error} - Throws a formatted error response based on the error type.
  */
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res) => {
     let error = { ...err };
     error.message = err.message;
 
