@@ -1,6 +1,8 @@
 node_modules
+dist
 config/config.env
 test-results.json
 junit.xml
 reports
 .early.coverage
+coverage

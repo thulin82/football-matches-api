@@ -30,15 +30,18 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Type check
+        run: npm run typecheck
+
       - name: Test
-        run: npm test
-        env:
-          NODE_ENV: ${{secrets.NODE_ENV}}
-          MONGODB_URI: ${{secrets.MONGODB_URI}}
+        run: npm run test:ci
+
+      - name: Build
+        run: npm run build
 
       - name: Test Report
         uses: dorny/test-reporter@v1
         with:
           name: unit tests (${{ matrix.node-version }})
-          path: reports/jest-junit.xml
-          reporter: jest-junit
+          path: reports/junit.xml
+          reporter: java-junit
