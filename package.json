@@ -2,14 +2,19 @@
   "name": "football-matches-api",
   "version": "1.0.0",
   "description": "API backend for football matches",
-  "main": "server.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "start": "NODE_ENV=production node server",
-    "dev": "nodemon server",
+    "build": "tsc",
+    "start": "cross-env NODE_ENV=production node dist/server.js",
+    "dev": "tsx watch src/server.ts",
     "lint": "eslint .",
-    "test": "jest --reporters=default --reporters=jest-junit",
-    "test_console": "jest"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ci": "cross-env CI=true vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -27,23 +32,24 @@
     "slugify": "^1.6.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^8.0.0",
     "@eslint/js": "^10.0.0",
-    "babel-jest": "^30.4.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^26.2.0",
+    "@types/node-geocoder": "^4.2.6",
+    "@types/supertest": "^7.2.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "cross-env": "^10.1.0",
     "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
     "globals": "17.11.0",
-    "jest": "^30.4.0",
-    "jest-junit": "17.0.0",
-    "nodemon": "^3.1.0",
-    "supertest": "^7.2.0"
-  },
-  "jest-junit": {
-    "outputDirectory": "reports",
-    "outputName": "jest-junit.xml",
-    "ancestorSeparator": " › ",
-    "uniqueOutputName": "false",
-    "suiteNameTemplate": "{filepath}",
-    "classNameTemplate": "{classname}",
-    "titleTemplate": "{title}"
+    "prettier": "^3.9.6",
+    "supertest": "^7.2.0",
+    "tsx": "^4.23.12",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.67.0",
+    "vitest": "^4.1.10",
+    "zod": "^4.4.3"
   }
 }

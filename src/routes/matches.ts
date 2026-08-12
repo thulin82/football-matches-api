@@ -1,13 +1,13 @@
-import express from "express";
+import { Router } from "express";
 import {
-    getMatch,
-    getMatches,
-    createMatch,
-    updateMatch,
-    deleteMatch,
+  getMatch,
+  getMatches,
+  createMatch,
+  updateMatch,
+  deleteMatch,
 } from "../controllers/matches.js";
 
-const router = express.Router();
+const router = Router();
 
 router.route("/").get(getMatches).post(createMatch);
 
