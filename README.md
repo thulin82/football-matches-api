@@ -1,6 +1,6 @@
 # [Football Matches API](https://github.com/thulin82/football-matches-api)
 
-[![GitHub Actions](https://github.com/thulin82/football-matches-api/actions/workflows/github-actions.yml/badge.svg)](https://github.com/thulin82/football-matches-api/actions/workflows/github-actions.yml)
+[![CI](https://github.com/thulin82/football-matches-api/actions/workflows/ci.yml/badge.svg)](https://github.com/thulin82/football-matches-api/actions/workflows/ci.yml)
 
 API backend for football matches (no frontend at this point)
 
@@ -27,8 +27,9 @@ $ npm start
 ### Environment variables
 
 In config/config.env add
+
 ```
-MONGODB_URI = 
+MONGODB_URI =
 ```
 
 © Markus Thulin 2019-
